@@ -1,12 +1,71 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
 
 <head>
+  <style>
+    .root {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+    .companyName {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .fishIcon {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: -25px;
+      margin-bottom: -25px;
+    }
+    .infoText {
+      text-align: center;
+      font-size: 15px;
+    }
+    .infoBtn {
+      height: 45px;
+      width: 200px;
+      background-color: #24dbdb;
+      border: 0;
+      margin: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .infoBtnLink {
+      text-decoration: none;
+    }
+    .feedbackLink {
+      font-size: 15px;
+    }
+  </style>
 </head>
 
 <body>
-    <p>Sam is just swimming.. nothing to worry about</p>
-    <img src="images/genuine_site.png" width="150" , height="150">
+  <div class="root">
+    <h3 class="companyName">DoRight</h3>
+    <h3>Sam is just swimming</h3>
+    <div class="fishIcon">
+      <img src="images/genuine_site.png" width="200" height="200">
+    </div>
+    <h3>[This is a nice company]</h3>
+    <p class="infoText">
+        Wikipedia is know to be good. No kids were killed in this process.
+    </p>
+    <button class="infoBtn" id='info'>
+      <a
+        href="https://www.theguardian.com/technology/2004/oct/26/g2.onlinesupplement"
+        target="_blank"
+        class="infoBtnLink"
+      >
+        Find out more
+      </a>
+    </button>
+    <div class="feedbackLink">
+      <a href="">Give feedback</a>
+    </div>
+  </div>
 </body>
-
 </html>
