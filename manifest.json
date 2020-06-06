@@ -1,0 +1,33 @@
+{
+  "name": "DoRight",
+  "version": "1.0",
+  "description": "An Extension to evaluate sites and businesses on the internet",
+  "permissions": [
+    "declarativeContent",
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title":"Doright has access to this site",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/genuine_site.png",
+      "32": "images/genuine_site.png",
+      "48": "images/genuine_site.png",
+      "128": "images/genuine_site.png"
+    }
+  },
+  "icons": {
+    "16": "images/genuine_site.png",
+    "32": "images/genuine_site.png",
+    "48": "images/genuine_site.png",
+    "128": "images/genuine_site.png"
+  },
+  "manifest_version": 2
+}
