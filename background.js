@@ -10,18 +10,21 @@ chrome.runtime.onInstalled.addListener(function () {
   });
   chrome.tabs.onUpdated.addListener(function (tabs) {
     chrome.tabs.query({ active: true }, function (tabs) {
+      const supported_urls = ['facebook.com', 'wikipedia.org']
       const current_url = tabs[0].url;
       // const trackableUrls = ["facebook.com", "wikipedia.com"];
 
       // if (trackableUrls.includes(current_url)) {
-      //   chrome.browserAction.setPopup({ popup: 'index.html' })
+      //   chrome.pageAction.setPopup({ popup: 'index.html' })
       // }
+      const tabsID = tabs[0].id
       if (current_url.includes("facebook.com")) {
-        chrome.browserAction.setPopup({ popup: 'facebook.html' });
-      }else if(current_url.includes("wikipedia.org")){
-        chrome.browserAction.setPopup({ popup: 'wikipedia.html' });
+        chrome.pageAction.setPopup({tabId:tabsID, popup: 'facebook.html'});
+      }
+      if(current_url.includes("wikipedia.org")){
+        chrome.pageAction.setPopup({tabId:tabsID, popup: 'wikipedia.html'});
       } else {
-        chrome.browserAction.setPopup({ popup: 'popup.html' });
+        chrome.pageAction.setPopup({tabId:tabsID, popup: 'popup.html'});
       }
     });
   })

@@ -1,5 +1,5 @@
 {
-  "name": "DoRight",
+  "name": "Jo The Fish",
   "version": "1.0",
   "description": "An Extension to evaluate sites and businesses on the internet",
   "permissions": [
@@ -9,11 +9,11 @@
   ],
   "background": {
     "scripts": [
-      "background.js"
+      "background.js", "popup.js"
     ],
     "persistent": false
   },
-  "browser_action": {
+  "page_action": {
     "default_title":"Doright has access to this site",
     "default_popup": "popup.html",
     "default_icon": {
