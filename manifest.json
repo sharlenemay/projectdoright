@@ -14,20 +14,20 @@
     "persistent": false
   },
   "page_action": {
-    "default_title":"Doright has access to this site",
+    "default_title":"Jo The Fish",
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/genuine_site.png",
-      "32": "images/genuine_site.png",
-      "48": "images/genuine_site.png",
-      "128": "images/genuine_site.png"
+      "16": "images/happy_jo_icon.png",
+      "32": "images/happy_jo_icon.png",
+      "48": "images/happy_jo_icon.png",
+      "128": "images/happy_jo_icon.png"
     }
   },
   "icons": {
-    "16": "images/genuine_site.png",
-    "32": "images/genuine_site.png",
-    "48": "images/genuine_site.png",
-    "128": "images/genuine_site.png"
+    "16": "images/happy_jo_icon.png",
+    "32": "images/happy_jo_icon.png",
+    "48": "images/happy_jo_icon.png",
+    "128": "images/happy_jo_icon.png"
   },
   "manifest_version": 2
 }
