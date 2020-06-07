@@ -28,7 +28,8 @@ chrome.runtime.onInstalled.addListener(function () {
 
       }
       if(current_url.includes("amazon.com")){
-        chrome.pageAction.setPopup({tabId:tabsID, popup: 'amazon.html'});
+        chrome.pageAction.setPopup({tabId:tabsID, popup: 'amazon.html'})
+        chrome.pageAction.setIcon({tabId:tabsID, path:"images/sad_jo_icon.png"})
       }
     });
   })

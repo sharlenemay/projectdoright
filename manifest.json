@@ -3,13 +3,14 @@
   "version": "1.0",
   "description": "An Extension to evaluate sites and businesses on the internet",
   "permissions": [
+    "activeTab",
     "declarativeContent",
     "storage",
     "tabs"
   ],
   "background": {
     "scripts": [
-      "background.js", "popup.js"
+      "background.js"
     ],
     "persistent": false
   },
