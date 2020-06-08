@@ -10,26 +10,28 @@ chrome.runtime.onInstalled.addListener(function () {
   });
   chrome.tabs.onUpdated.addListener(function (tabs) {
     chrome.tabs.query({ active: true }, function (tabs) {
-      const supported_urls = ['facebook.com', 'wikipedia.org']
-      const current_url = tabs[0].url;
-      // const trackableUrls = ["facebook.com", "wikipedia.com"];
+      const currentUrl = tabs[0].url;
+      const currentTabId = tabs[0].id;
+      const sadJoIcon = 'images/sad_jo_icon.png';
+      const happyJoIcon = 'images/happy_jo_icon.png';
 
-      // if (trackableUrls.includes(current_url)) {
-      //   chrome.pageAction.setPopup({ popup: 'index.html' })
-      // }
-      const tabsID = tabs[0].id
-      if (current_url.includes("facebook.com")) {
-        chrome.pageAction.setPopup({tabId:tabsID, popup: 'facebook.html'});
-        chrome.pageAction.setIcon({tabId:tabsID, path:"images/sad_jo_icon.png"})
+      if (currentUrl.includes('facebook.com')) {
+        chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'facebook.html' });
+        chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
+        chrome.notifications.create(`${Math.random()}`, {
+          type: 'basic',
+          iconUrl: sadJoIcon,
+          title: 'Alert!',
+          message: 'This site is one of the untrusted sites'
+        });
       }
-      if(current_url.includes("wikipedia.org")){
-        chrome.pageAction.setPopup({tabId:tabsID, popup: 'wikipedia.html'});
-        chrome.pageAction.setIcon({tabId:tabsID, path:"images/happy_jo_icon.png"})
-
+      if(currentUrl.includes('wikipedia.org')){
+        chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'wikipedia.html' });
+        chrome.pageAction.setIcon({ tabId: currentTabId, path: happyJoIcon });
       }
-      if(current_url.includes("amazon.com")){
-        chrome.pageAction.setPopup({tabId:tabsID, popup: 'amazon.html'})
-        chrome.pageAction.setIcon({tabId:tabsID, path:"images/sad_jo_icon.png"})
+      if(currentUrl.includes('amazon.com')){
+        chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'amazon.html' })
+        chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
       }
     });
   })
