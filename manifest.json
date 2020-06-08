@@ -6,7 +6,8 @@
     "activeTab",
     "declarativeContent",
     "storage",
-    "tabs"
+    "tabs",
+    "notifications"
   ],
   "background": {
     "scripts": [
