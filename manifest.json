@@ -7,7 +7,8 @@
     "declarativeContent",
     "storage",
     "tabs",
-    "notifications"
+    "notifications",
+    "<all_urls>"
   ],
   "background": {
     "scripts": [
@@ -17,7 +18,7 @@
   },
   "page_action": {
     "default_title":"Jo The Fish",
-    "default_popup": "popup.html",
+    "default_popup": "index.html",
     "default_icon": {
       "16": "images/happy_jo_icon.png",
       "32": "images/happy_jo_icon.png",
@@ -32,5 +33,9 @@
     "128": "images/happy_jo_icon.png"
   },
   "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "web_accessible_resources":[
+    "images/*.png",
+    "images/sad_joe.png"
+  ]
 }
