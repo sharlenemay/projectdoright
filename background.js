@@ -37,6 +37,10 @@ chrome.runtime.onInstalled.addListener(function () {
         chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Amazon' });
         // chrome.notifications.create(`${Math.random()}`, sadJoNotification);
       }
+            if(currentUrl.includes('netflix.com')){
+        chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
+        chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Amazon' });
+        // chrome.notifications.create(`${Math.random()}`, sadJoNotification);
 
     });
   })
