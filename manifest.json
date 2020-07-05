@@ -31,5 +31,6 @@
     "48": "images/happy_jo_icon.png",
     "128": "images/happy_jo_icon.png"
   },
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
   "manifest_version": 2
 }

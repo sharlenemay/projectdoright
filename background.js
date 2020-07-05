@@ -24,12 +24,15 @@ chrome.runtime.onInstalled.addListener(function () {
       if (currentUrl.includes('facebook.com')) {
         chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'facebook.html' });
         chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
+        chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Facebook' });
         chrome.notifications.create(`${Math.random()}`, sadJoNotification);
       }
+
       if(currentUrl.includes('wikipedia.org')){
         chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'wikipedia.html' });
         chrome.pageAction.setIcon({ tabId: currentTabId, path: happyJoIcon });
       }
+
       if(currentUrl.includes('amazon.com')){
         chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'amazon.html' })
         chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
