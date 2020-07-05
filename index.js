@@ -9,8 +9,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-console.log('Firebase >>>', firebase);
-
 const db = firebase.firestore();
 
 const errors = document.querySelector(".errors");
@@ -22,7 +20,6 @@ const findOutMore = document.querySelector(".findOutMore");
 const headline = document.querySelector(".headline");
 const imageUrl = document.getElementById("image");
 const tempUrl = "file:///Users/awesome/projectDoright/images"   //TODO host and fetch the files on amazon s3 bucket
-
 
 const statusObj = {
   "Warning": {
@@ -36,7 +33,6 @@ const statusObj = {
   }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  
   chrome.tabs.query({ active: true }, function (tabs) {
     const currentTabId = tabs[0].id;
     
@@ -44,14 +40,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const docRef = db.collection('JoTheFishData').doc(result);
       docRef.get().then((doc) => {
         if (doc.exists) {
-          companyName.textContent = doc.data()["Company name"]
-          const generalLevel = doc.data().Level;
+          const data =  doc.data()
+          companyName.textContent = data["Company name"]
+          const generalLevel = data.Level;
           const status = statusObj[generalLevel];
           headline.textContent = status.title;
-          summary.textContent = doc.data().Summary;
-          imageUrl.src = tempUrl+status.imageUrl || tempUrl+"/happy_jo_icon.png"
+          summary.textContent = data.Summary;
+          imageUrl.src = status? tempUrl+status.imageUrl: tempUrl+"/happy_jo_icon.png"
         } else {
-          console.log('No doc >>>');
+          console.log('No data loaded >>>');
         }
       })
       .catch((error) => {
