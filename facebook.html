@@ -1,73 +1,74 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-  <style>
-    .root {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
-      margin: 20px;
-    }
-    .companyName {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-    .fishIcon {
-      padding-left: 20px;
-      padding-right: 20px;
-      margin-top: -25px;
-      margin-bottom: -25px;
-    }
-    .infoText {
-      text-align: center;
-      font-size: 15px;
-    }
-    .infoBtn {
-      height: 45px;
-      width: 200px;
-      background-color: #24dbdb;
-      border: 0;
-      margin: 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .infoBtnLink {
-      text-decoration: none;
-    }
-    .feedbackLink {
-      font-size: 15px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="root">
-    <h3 class="companyName">Jo The Fish</h3>
-    <h3>This water is poisonous</h3>
-    <div class="fishIcon">
-      <img src="images/sad_jo.png" width="200" height="200">
+  <head>
+    <style>
+      .root {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+      }
+      .companyName {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .fishIcon {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: -25px;
+        margin-bottom: -25px;
+      }
+      .infoText {
+        text-align: center;
+        font-size: 15px;
+      }
+      .infoBtn {
+        height: 45px;
+        width: 200px;
+        background-color: #24dbdb;
+        border: 0;
+        margin: 15px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .infoBtnLink {
+        text-decoration: none;
+      }
+      .feedbackLink {
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <h3 class="companyName">Jo The Fish</h3>
+      <h3>This water is poisonous</h3>
+      <div class="fishIcon">
+        <img src="images/sad_jo.png" width="200" height="200">
+      </div>
+      <h3>Watch out!</h3>
+      <p class="infoText" id="summary">
+        Facebook has been involved in many scandals over the years and tends to take a passive
+        approach instead of owning up to their mistakes and make a drastic change.
+      </p>
+      <button class="infoBtn" id='info'>
+        <a
+          href="https://en.wikipedia.org/wiki/Criticism_of_Facebook"
+          target="_blank"
+          class="infoBtnLink"
+        >
+          Find out more
+        </a>
+      </button>
+      <div class="feedbackLink">
+        <a href="">Give feedback</a>
+      </div>
     </div>
-    <h3>Watch out!</h3>
-    <p class="infoText">
-      Facebook has been involved in many scandals over the years and tends to take a passive
-      approach instead of owning up to their mistakes and make a drastic change.
-    </p>
-    <button class="infoBtn" id='info'>
-      <a
-        href="https://en.wikipedia.org/wiki/Criticism_of_Facebook"
-        target="_blank"
-        class="infoBtnLink"
-      >
-        Find out more
-      </a>
-    </button>
-    <div class="feedbackLink">
-      <a href="">Give feedback</a>
-    </div>
-  </div>
-  <scrip scr="facebook.js"></scrip>
-</body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="facebook.js"></script>
+  </body>
 </html>
