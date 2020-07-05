@@ -64,6 +64,10 @@ chrome.runtime.onInstalled.addListener(function() {
                 chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
                 chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Home Depot' });
             };
+            if (currentUrl.includes('reddit.com')) {
+                chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
+                chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Reddit' });
+            };
             if (currentUrl.includes('xfinity.com')) {
                 chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
                 chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Comcast' });
