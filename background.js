@@ -14,17 +14,18 @@ chrome.runtime.onInstalled.addListener(function () {
       const currentTabId = tabs[0].id;
       const sadJoIcon = 'images/sad_jo_icon.png';
       const happyJoIcon = 'images/happy_jo_icon.png';
+      const sadJoNotification = {
+        type: 'basic',
+        iconUrl: sadJoIcon,
+        title: 'Jo is sick!',
+        message: 'Judge for yourself'
+      };
 
       if (currentUrl.includes('facebook.com')) {
         chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'facebook.html' });
         chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
         chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Facebook' });
-        chrome.notifications.create(`${Math.random()}`, {
-          type: 'basic',
-          iconUrl: sadJoIcon,
-          title: 'Alert!',
-          message: 'This site is one of the untrusted sites'
-        });
+        chrome.notifications.create(`${Math.random()}`, sadJoNotification);
       }
 
       if(currentUrl.includes('wikipedia.org')){
@@ -35,6 +36,7 @@ chrome.runtime.onInstalled.addListener(function () {
       if(currentUrl.includes('amazon.com')){
         chrome.pageAction.setPopup({ tabId: currentTabId, popup: 'amazon.html' })
         chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
+        chrome.notifications.create(`${Math.random()}`, sadJoNotification);
       }
     });
   })
