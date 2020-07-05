@@ -32,7 +32,7 @@ chrome.runtime.onInstalled.addListener(function () {
         chrome.pageAction.setTitle({ tabId: currentTabId, title: 'wikipedia' });
       }
 
-      if(currentUrl.includes('amazon.com')){
+      if(currentUrl.includes('amazon.')){
         chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });
         chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Amazon' });
         // chrome.notifications.create(`${Math.random()}`, sadJoNotification);
