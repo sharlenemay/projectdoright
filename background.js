@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(function () {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: { urlMatches: '(developer.chrome|amazon|facebook|wikipedia)\.com|.org' },
+        pageUrl: { urlMatches: '(developer.chrome|dorchestercollection|amazon|draperesprit|facebook|wikipedia|netflix|google|reddit)\.com|.org' },
       })
       ],
       actions: [new chrome.declarativeContent.ShowPageAction()]
@@ -37,6 +37,7 @@ chrome.runtime.onInstalled.addListener(function () {
         chrome.pageAction.setTitle({ tabId: currentTabId, title: 'Amazon' });
         // chrome.notifications.create(`${Math.random()}`, sadJoNotification);
       }
+
     });
   })
 });

@@ -7,7 +7,8 @@
     "declarativeContent",
     "storage",
     "tabs",
-    "notifications"
+    "notifications",
+    "<all_urls>"
   ],
   "background": {
     "scripts": [
