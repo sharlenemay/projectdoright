@@ -19,6 +19,12 @@ chrome.runtime.onInstalled.addListener(function() {
                 title: 'Jo is sick!',
                 message: 'Judge for yourself'
             };
+            // {
+            //     "facebook.com":{
+            //         status: sadJoIcon,
+            //         title:'Facebook'
+            //     }
+            // }
 
             if (currentUrl.includes('facebook.com')) {
                 chrome.pageAction.setIcon({ tabId: currentTabId, path: sadJoIcon });

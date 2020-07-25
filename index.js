@@ -30,9 +30,16 @@ const statusObj = {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    chrome.runtime.onInstalled.addListener(function() {
+        chrome.storage.sync.set('JoeData', db.collection('JoTheFishData'), function(){
+            alert("this is it")
+            console.log('value set to ' +  db.collection('JoTheFishData'))
+        }51234)
+        localStorage.setItem('JoeData', db)
+    })
     chrome.tabs.query({ active: true }, function(tabs) {
         const currentTabId = tabs[0].id;
-
+        chrome.extension.getBackgroundPage().console.log("this is awesome")
         chrome.pageAction.getTitle({ tabId: currentTabId }, function(result) {
             const docRef = db.collection('JoTheFishData').doc(result);
             docRef.get().then((doc) => {
